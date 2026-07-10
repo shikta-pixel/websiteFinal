@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-8 sm:flex-row sm:justify-between">
         <a href="#home" className="flex items-center gap-2.5">
           <span className="flex h-7 items-center rounded-sm bg-orange-500 px-2 font-mono text-xs font-bold tracking-wider text-cream">
-            GFU
+            AshiN
           </span>
           <span className="font-display text-base tracking-wide">Consultancy</span>
           <span className="ml-1 font-mono text-xs text-ink/50 dark:text-cream/50">© 2026</span>

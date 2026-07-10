@@ -33,7 +33,7 @@ export function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <a href="#home" className="flex items-center gap-2.5">
           <span className="flex h-8 items-center rounded-sm bg-orange-500 px-2 font-mono text-sm font-bold tracking-wider text-cream">
-            GFU
+            AshiN
           </span>
           <span className="font-display text-lg tracking-wide text-ink dark:text-cream">Consultancy</span>
         </a>
