@@ -86,11 +86,10 @@ export const services: Service[] = [
 export const skillGroups = [
   {
     title: 'Testing & QA',
-    items: ['Selenium WebDriver', 'Playwright', 'Cypress', 'Jest', 'PyTest', 'RestAssured', 'JMeter', 'K6'],
+    items: ['Selenium WebDriver', 'Playwright', 'PyTest', 'RestAssured'],
   },
-  {
-    title: 'DevOps & Cloud',
-    items: ['GitHub Actions', 'Docker', 'Azure', 'Kubernetes', 'Terraform', 'Jenkins', 'Grafana', 'Prometheus'],
+  {   title: 'DevOps & Cloud',
+    items: ['GitHub Actions', 'Docker', 'Azure', 'Jenkins'],
   },
   {
     title: 'Languages & Frameworks',
@@ -98,7 +97,7 @@ export const skillGroups = [
   },
   {
     title: 'Databases & APIs',
-    items: ['PostgreSQL', 'MongoDB', 'REST APIs', 'GraphQL', 'Swagger/OpenAPI', 'Redis', 'Elasticsearch'],
+    items: ['PostgreSQL', 'REST APIs', 'GraphQL', 'Swagger/OpenAPI', 'Postman'],
   },
 ] as const
 

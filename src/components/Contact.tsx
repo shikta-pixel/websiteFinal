@@ -1,6 +1,11 @@
-import { useState, type FormEvent } from 'react'
+import { useRef, useState, type FormEvent } from 'react'
+import emailjs from '@emailjs/browser'
 import { Mail, MapPin, Monitor, Send } from 'lucide-react'
 import { serviceOptions } from '../data/content'
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const inputClasses =
   'w-full rounded-md border border-line-light bg-transparent px-4 py-3 text-sm text-ink placeholder:text-ink/40 focus:border-orange-500 focus:outline-none dark:border-line-dark dark:text-cream dark:placeholder:text-cream/40'
@@ -14,11 +19,26 @@ const contactInfo = [
 ]
 
 export function Contact() {
-  const [submitted, setSubmitted] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setSubmitted(true)
+    if (!formRef.current) return
+
+    setStatus('sending')
+    emailjs
+      .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      })
+      .then(() => {
+        setStatus('sent')
+        formRef.current?.reset()
+      })
+      .catch((error) => {
+        console.error('EmailJS send failed:', error)
+        setStatus('error')
+      })
   }
 
   return (
@@ -46,13 +66,19 @@ export function Contact() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div className="flex flex-col gap-2">
               <label className={labelClasses} htmlFor="name">
                 Name
               </label>
-              <input id="name" required placeholder="Alex Johnson" className={inputClasses} />
+              <input
+                id="name"
+                name="user_name"
+                required
+                placeholder="Alex Johnson"
+                className={inputClasses}
+              />
             </div>
             <div className="flex flex-col gap-2">
               <label className={labelClasses} htmlFor="email">
@@ -60,6 +86,7 @@ export function Contact() {
               </label>
               <input
                 id="email"
+                name="user_email"
                 type="email"
                 required
                 placeholder="alex@company.com"
@@ -72,14 +99,20 @@ export function Contact() {
             <label className={labelClasses} htmlFor="company">
               Company
             </label>
-            <input id="company" placeholder="Acme Corp" className={inputClasses} />
+            <input id="company" name="company" placeholder="Acme Corp" className={inputClasses} />
           </div>
 
           <div className="flex flex-col gap-2">
             <label className={labelClasses} htmlFor="service">
               Service Required *
             </label>
-            <select id="service" required defaultValue="" className={inputClasses}>
+            <select
+              id="service"
+              name="service"
+              required
+              defaultValue=""
+              className={inputClasses}
+            >
               <option value="" disabled>
                 Select a service...
               </option>
@@ -97,6 +130,7 @@ export function Contact() {
             </label>
             <textarea
               id="message"
+              name="message"
               required
               rows={5}
               placeholder="Tell us about your project, timeline, and key challenges..."
@@ -106,14 +140,20 @@ export function Contact() {
 
           <button
             type="submit"
-            className="mt-2 flex items-center justify-center gap-2 rounded-md bg-orange-500 px-6 py-4 font-mono text-sm font-semibold uppercase tracking-[0.15em] text-cream transition-colors hover:bg-orange-600"
+            disabled={status === 'sending'}
+            className="mt-2 flex items-center justify-center gap-2 rounded-md bg-orange-500 px-6 py-4 font-mono text-sm font-semibold uppercase tracking-[0.15em] text-cream transition-colors hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {submitted ? 'Message Sent' : 'Contact Us'}
+            {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Message Sent' : 'Contact Us'}
             <Send size={16} />
           </button>
-          {submitted && (
+          {status === 'sent' && (
             <p className="text-sm text-emerald-600 dark:text-emerald-400">
               Thanks — we&apos;ll be in touch with you.
+            </p>
+          )}
+          {status === 'error' && (
+            <p className="text-sm text-red-600 dark:text-red-400">
+              Something went wrong sending your message. Please try again or email us directly.
             </p>
           )}
         </form>
