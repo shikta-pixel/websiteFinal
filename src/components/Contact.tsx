@@ -8,7 +8,7 @@ const inputClasses =
 const labelClasses = 'font-mono text-xs uppercase tracking-[0.2em] text-ink/60 dark:text-cream/60'
 
 const contactInfo = [
-  { icon: Mail, label: 'contact@ashinconsultancy.com' },
+  { icon: Mail, label: 'sri.shalu0714@gmail.com' },
   { icon: MapPin, label: 'Remote — Worldwide' },
   { icon: Monitor, label: 'Part-time & full contract engagements' },
 ]
