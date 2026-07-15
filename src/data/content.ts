@@ -128,10 +128,11 @@ export const testimonials = [
   {
     quote:
       'Transformed our QA practice from reactive to predictive. Our defect escape rate dropped 78% in six months. The automation framework they built is still the backbone of our CI pipeline two years later.',
-    name: 'Sarah Chen',
-    role: 'VP Engineering, FinTech Corp',
+    name: 'Devesh Ram',
+    role: 'V.P. of Arkacommunications',
     initials: 'SC',
   },
+  /*
   {
     quote:
       'They rebuilt our incident response process from the ground up. Mean time to resolution dropped by 60% and our on-call engineers finally get to sleep through the night.',
@@ -145,7 +146,7 @@ export const testimonials = [
     name: 'Priya Nandan',
     role: 'Head of DevOps, Northbridge SaaS',
     initials: 'PN',
-  },
+  },*/
 ] as const
 
 export const serviceOptions = [
