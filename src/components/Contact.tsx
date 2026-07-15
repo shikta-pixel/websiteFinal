@@ -113,7 +113,7 @@ export function Contact() {
           </button>
           {submitted && (
             <p className="text-sm text-emerald-600 dark:text-emerald-400">
-              Thanks — we&apos;ll be in touch within one business day.
+              Thanks — we&apos;ll be in touch with you.
             </p>
           )}
         </form>

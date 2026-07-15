@@ -16,8 +16,8 @@ export function About() {
           <div className="mt-8 flex flex-col gap-5 text-ink/70 dark:text-cream/70">
             <p className="leading-relaxed">
               We specialise in building the quality infrastructure that lets engineering teams ship
-              faster with confidence. We have worked across financial services, healthcare
-              technology, and SaaS — always automation-first.
+              faster with confidence. We have worked across financial services, and healthcare
+              technology, always automation-first.
             </p>
             <p className="leading-relaxed">
               Whether you need a test framework from scratch, incident management overhauled, or a
