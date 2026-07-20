@@ -97,7 +97,7 @@ export const skillGroups = [
   },
   {
     title: 'Databases & APIs',
-    items: ['PostgreSQL', 'REST APIs', 'GraphQL', 'Swagger/OpenAPI', 'Postman'],
+    items: ['PostgreSQL', 'REST APIs', 'Swagger/OpenAPI', 'Postman'],
   },
 ] as const
 
@@ -112,7 +112,6 @@ export const techStack = [
   'Azure',
   'Playwright',
   'Python',
-  'Kubernetes',
 ] as const
 
 export type Project = {
