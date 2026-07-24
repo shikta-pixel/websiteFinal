@@ -62,10 +62,10 @@ export function Navbar() {
           >
             {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
           </button>
-          <button className="flex h-10 items-center gap-1.5 rounded-md border border-line-light px-4 font-mono text-xs uppercase tracking-[0.15em] text-ink transition-colors hover:border-orange-500 hover:text-orange-500 dark:border-line-dark dark:text-cream">
+        {/*  <button className="flex h-10 items-center gap-1.5 rounded-md border border-line-light px-4 font-mono text-xs uppercase tracking-[0.15em] text-ink transition-colors hover:border-orange-500 hover:text-orange-500 dark:border-line-dark dark:text-cream">
             <LogIn size={14} />
             Admin
-          </button>
+          </button>=*/}
           <Button as="a" href="#contact">
             Hire Us
           </Button>
