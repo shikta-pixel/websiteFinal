@@ -20,7 +20,7 @@ export function Hero() {
             <span className="block text-orange-500">Quality</span>
             <span className="block text-ink dark:text-cream">&amp; Automation</span>
             <span className="block text-ink/25 dark:text-cream/25">Consulting</span>
-             <span className="block text-orange-500/25 dark:text-cream/25">And Digital Marketing</span>
+             <span className="block text-orange-500/25">And Digital Marketing</span>
           </h1>
 
           <div className="flex flex-col gap-6">
