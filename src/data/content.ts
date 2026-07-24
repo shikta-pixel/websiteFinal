@@ -2,6 +2,7 @@ export const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
+  { label: 'Growth', href: '#growth-services' },
   { label: 'Skills', href: '#skills' },
   { label: 'Portfolio', href: '#portfolio' },
   { label: 'Testimonials', href: '#testimonials' },
@@ -80,6 +81,57 @@ export const services: Service[] = [
     description:
       'Strategic guidance on quality processes, tooling selection, team capability development, and engineering culture improvement.',
     tags: ['Strategy', 'Tooling', 'Team Growth'],
+  },
+]
+
+export type GrowthService = {
+  icon: 'megaphone' | 'palette' | 'file-text' | 'share2' | 'monitor-smartphone' | 'search' | 'target'
+  title: string
+  description: string
+}
+
+export const growthServices: GrowthService[] = [
+  {
+    icon: 'megaphone',
+    title: 'Digital Marketing',
+    description:
+      'Drive business growth with data-driven digital marketing strategies, lead generation, and online campaigns.',
+  },
+  {
+    icon: 'palette',
+    title: 'Branding',
+    description:
+      'Build a memorable brand identity with logo design, brand strategy, and visual branding.',
+  },
+  {
+    icon: 'file-text',
+    title: 'Content Creation',
+    description:
+      'Create high-quality website content, blogs, social media posts, graphics, and marketing materials.',
+  },
+  {
+    icon: 'share2',
+    title: 'Social Media Marketing',
+    description:
+      'Grow your audience through strategic social media management, content planning, paid ads, and engagement.',
+  },
+  {
+    icon: 'monitor-smartphone',
+    title: 'Website Design',
+    description:
+      'Design modern, responsive, fast-loading, and user-friendly websites optimized for all devices.',
+  },
+  {
+    icon: 'search',
+    title: 'Search Engine Optimization',
+    description:
+      'Improve search engine rankings, increase organic traffic, and optimize website performance.',
+  },
+  {
+    icon: 'target',
+    title: 'Search Engine Marketing',
+    description:
+      'Generate leads with Google Ads, PPC campaigns, keyword targeting, and conversion optimization.',
   },
 ]
 
