@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section id="home" className="scroll-mt-20 border-b border-line-light dark:border-line-dark">
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-16 lg:pt-28">
-        <div className="mb-10 flex items-center gap-4">
+        <div className="mb-10 flex items-center gap-2">
           <span className="flex items-center gap-1 font-mono text-xs uppercase tracking-[0.2em] text-ink/60 dark:text-cream/60">
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
             Available for projects &middot; Q3 2026
